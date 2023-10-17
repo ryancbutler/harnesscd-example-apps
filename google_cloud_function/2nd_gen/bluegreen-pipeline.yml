@@ -1,8 +1,8 @@
 pipeline:
   name: blue-green
   identifier: bluegreen
-  projectIdentifier: default_project
-  orgIdentifier: default
+  projectIdentifier: butler_dev
+  orgIdentifier: sandboxtraining
   tags: {}
   stages:
     - stage:

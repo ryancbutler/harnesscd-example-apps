@@ -2,8 +2,8 @@ connector:
   name: harness_azureconnector
   identifier: harness_azureconnector
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Azure
   spec:
     credential:

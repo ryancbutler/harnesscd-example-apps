@@ -1,8 +1,8 @@
 service:
   name: harness_guestbook
   identifier: harnessguestbook
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   serviceDefinition:
     type: NativeHelm
     spec:

@@ -2,8 +2,8 @@ connector:
   name: harness_k8sconnector
   identifier: harnessk8sconnector
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: K8sCluster
   spec:
     credential:

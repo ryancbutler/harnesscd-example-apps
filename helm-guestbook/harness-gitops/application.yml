@@ -1,7 +1,7 @@
 gitops:
   name: gitops-helm-application
-  projectIdentifier: default_project
-  orgIdentifier: default
+  projectIdentifier: butler_dev
+  orgIdentifier: sandboxtraining
   type: application
   application:
     metadata:

@@ -2,8 +2,8 @@ connector:
   name: gcpconnector
   identifier: gcpconnector
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Gcp
   spec:
     credential:

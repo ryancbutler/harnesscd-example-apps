@@ -1,8 +1,8 @@
 gitops:
     name: gitops_repo
     identifier: gitopsrepo
-    projectIdentifier: default_project
-    orgIdentifier: default
+    projectIdentifier: butler_dev
+    orgIdentifier: sandboxtraining
     type: repository
     repo:
         repo: https://github.com/harness-community/harnesscd-example-apps

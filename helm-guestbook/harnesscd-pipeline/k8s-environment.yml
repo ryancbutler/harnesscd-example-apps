@@ -3,6 +3,6 @@ environment:
   identifier: harnessdevenvdep
   tags: {}
   type: PreProduction
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   variables: []

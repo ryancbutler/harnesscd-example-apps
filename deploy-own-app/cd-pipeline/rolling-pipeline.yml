@@ -1,8 +1,8 @@
 pipeline:
   name: ownapp_rolling_pipeline
   identifier: ownapp_rolling_pipeline
-  projectIdentifier: default_project
-  orgIdentifier: default
+  projectIdentifier: butler_dev
+  orgIdentifier: sandboxtraining
   tags: {}
   stages:
     - stage:

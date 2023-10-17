@@ -2,8 +2,8 @@ connector:
   name: approval-demo
   identifier: approvaldemo
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   spec:
     jiraUrl: JIRA_URL
     username: EMAIL ID FOR JIRA

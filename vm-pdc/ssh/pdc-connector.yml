@@ -2,11 +2,11 @@ connector:
   name: harness_pdc
   identifier: harness_pdc
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Pdc
   spec:
     hosts:
-      - hostname: HOST_IP_OR_FQDN
+      - hostname: docker.lab.local
     delegateSelectors:
       - DELEGATE_NAME

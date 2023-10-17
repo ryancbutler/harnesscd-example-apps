@@ -2,8 +2,8 @@ connector:
   name: harness_gitconnector
   identifier: harnessgitconnector
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Github
   spec:
     url: https://github.com/GITHUB_USERNAME/

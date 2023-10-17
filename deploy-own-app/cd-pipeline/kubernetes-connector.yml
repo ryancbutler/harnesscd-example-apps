@@ -2,8 +2,8 @@ connector:
 name: ownapp_k8sconnector
 identifier: ownappk8sconnector
 description: ""
-orgIdentifier: default
-projectIdentifier: default_project
+orgIdentifier: sandboxtraining
+projectIdentifier: butler_dev
 type: K8sCluster
 spec:
     credential:

@@ -2,8 +2,8 @@ connector:
   name: aws-lambda
   identifier: awslambda
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Aws
   spec:
     credential:

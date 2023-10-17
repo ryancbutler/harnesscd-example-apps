@@ -12,7 +12,7 @@ service:
               store:
                 type: Github
                 spec:
-                  connectorRef: harnessgitconnector
+                  connectorRef: rbutler
                   gitFetchType: Branch
                   folderPath: kustomize-guestbook
                   branch: master

@@ -1,8 +1,8 @@
 pipeline:
   name: basic
   identifier: basic
-  projectIdentifier: default_project
-  orgIdentifier: default
+  projectIdentifier: butler_dev
+  orgIdentifier: sandboxtraining
   tags: {}
   stages:
     - stage:

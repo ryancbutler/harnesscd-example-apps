@@ -1,8 +1,8 @@
 pipeline:
   name: harness_ssh_pipeline
   identifier: harness_ssh_pipeline
-  projectIdentifier: default_project
-  orgIdentifier: default
+  projectIdentifier: butler_dev
+  orgIdentifier: sandboxtraining
   tags: {}
   stages:
     - stage:

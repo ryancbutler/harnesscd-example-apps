@@ -2,8 +2,8 @@ connector:
   name: harness_pdc
   identifier: harness_pdc
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Pdc
   spec:
     hosts:

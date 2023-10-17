@@ -2,8 +2,8 @@ connector:
   name: serverless-git-connector
   identifier: serverlessgitconnector
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Github
   spec:
     url: https://github.com/harness-community/harnesscd-example-apps

@@ -3,8 +3,8 @@ infrastructureDefinition:
   identifier: harness_remoteinstance
   description: ""
   tags: {}
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   environmentRef: harnessdevenv
   deploymentType: Ssh
   type: SshWinRmAws

@@ -2,8 +2,8 @@ connector:
   name: harness_awsconnector
   identifier: harness_awsconnector
   description: ""
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Aws
   spec:
     credential:

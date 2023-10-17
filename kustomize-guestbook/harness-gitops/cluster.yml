@@ -1,8 +1,8 @@
 gitops:
   name: gitops_cluster
   identifier: gitopscluster
-  projectIdentifier: default_project
-  orgIdentifier: default
+  projectIdentifier: butler_dev
+  orgIdentifier: sandboxtraining
   type: cluster
   cluster:
     server: https://kubernetes.default.svc

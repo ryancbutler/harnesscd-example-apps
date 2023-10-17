@@ -1,8 +1,8 @@
 connector:
   name: harness_artifactrepo
   identifier: harness_artifactrepo
-  orgIdentifier: default
-  projectIdentifier: default_project
+  orgIdentifier: sandboxtraining
+  projectIdentifier: butler_dev
   type: Artifactory
   spec:
     artifactoryServerUrl: https://harness.jfrog.io/artifactory

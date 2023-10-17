@@ -1,8 +1,8 @@
 gitops:
     name: ownapp_repo
     identifier: ownapprepo
-    projectIdentifier: default_project
-    orgIdentifier: default
+    projectIdentifier: butler_dev
+    orgIdentifier: sandboxtraining
     type: repository
     repo:
         repo: https://github.com/microservices-demo/microservices-demo

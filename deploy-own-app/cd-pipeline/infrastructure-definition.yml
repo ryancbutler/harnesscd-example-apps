@@ -3,8 +3,8 @@ name: ownapp_k8sinfra
 identifier: ownappk8sinfra
 description: ""
 tags: {}
-orgIdentifier: default
-projectIdentifier: default_project
+orgIdentifier: sandboxtraining
+projectIdentifier: butler_dev
 environmentRef: ownappdevenv
 deploymentType: Kubernetes
 type: KubernetesDirect

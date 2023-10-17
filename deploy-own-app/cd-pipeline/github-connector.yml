@@ -2,8 +2,8 @@ connector:
 name: ownapp_gitconnector
 identifier: ownappgitconnector
 description: ""
-orgIdentifier: default
-projectIdentifier: default_project
+orgIdentifier: sandboxtraining
+projectIdentifier: butler_dev
 type: Github
 spec:
     url: https://github.com/microservices-demo/microservices-demo
