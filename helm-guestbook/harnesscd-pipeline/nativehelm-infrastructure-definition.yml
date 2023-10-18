@@ -1,6 +1,6 @@
 infrastructureDefinition:
   name: harness_k8sinfra
-  identifier: harnessk8sinfra
+  identifier: k301
   description: ""
   tags: {}
   orgIdentifier: sandboxtraining

@@ -1,7 +1,7 @@
 pipeline:
   name: guestbook_bluegreen_pipeline
   identifier: guestbook_bluegreen_pipeline
-  projectIdentifier: butler_dev
+  projectIdentifier: butler_sandbox
   orgIdentifier: sandboxtraining
   tags: {}
   stages:
@@ -18,9 +18,23 @@ pipeline:
             environmentRef: harnessdevenv
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: harnessk8sinfra
+              - identifier: k301
           execution:
             steps:
+              - step:
+                  type: ShellScript
+                  name: CreateNS
+                  identifier: CreateNS
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: kubectl create namespace <+infra.namespace> --dry-run=client -o yaml | kubectl apply -f -
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
               - step:
                   name: Stage Deployment
                   identifier: stageDeployment

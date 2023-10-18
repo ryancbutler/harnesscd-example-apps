@@ -18,9 +18,23 @@ pipeline:
             environmentRef: harnessdevenv
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: harnessk8sinfra
+              - identifier: k301
           execution:
             steps:
+              - step:
+                    type: ShellScript
+                    name: CreateNS
+                    identifier: CreateNS
+                    spec:
+                      shell: Bash
+                      onDelegate: true
+                      source:
+                        type: Inline
+                        spec:
+                          script: kubectl create namespace <+infra.namespace> --dry-run=client -o yaml | kubectl apply -f -
+                      environmentVariables: []
+                      outputVariables: []
+                    timeout: 10m
               - stepGroup:
                   name: Canary Deployment
                   identifier: canaryDepoyment

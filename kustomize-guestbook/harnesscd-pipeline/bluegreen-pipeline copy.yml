@@ -1,0 +1,138 @@
+pipeline:
+  name: guestbook_bluegreen_pipeline
+  identifier: guestbook_bluegreen_pipeline
+  projectIdentifier: butler_sandbox
+  orgIdentifier: sandboxtraining
+  tags: {}
+  stages:
+    - parallel:
+      - stage:
+          name: deploy-guestbook-prod
+          identifier: deployguestbook
+          description: ""
+          type: Deployment
+          spec:
+            deploymentType: Kubernetes
+            service:
+              serviceRef: harnessguestbook
+            environment:
+              environmentRef: harnessdevenv
+              deployToAll: false
+              infrastructureDefinitions:
+                - identifier: k301
+                  inputs:
+                    identifier: k301
+                    type: KubernetesDirect
+                    spec:
+                      namespace: <+input>
+            execution:
+              steps:
+                - step:
+                    type: ShellScript
+                    name: CreateNS
+                    identifier: CreateNS
+                    spec:
+                      shell: Bash
+                      onDelegate: true
+                      source:
+                        type: Inline
+                        spec:
+                          script: kubectl create namespace <+infra.namespace> --dry-run=client -o yaml | kubectl apply -f -
+                      environmentVariables: []
+                      outputVariables: []
+                    timeout: 10m
+                - step:
+                    name: Stage Deployment
+                    identifier: stageDeployment
+                    type: K8sBlueGreenDeploy
+                    timeout: 10m
+                    spec:
+                      skipDryRun: false
+                      pruningEnabled: false
+                - step:
+                    name: Swap primary with stage service
+                    identifier: bgSwapServices
+                    type: K8sBGSwapServices
+                    timeout: 10m
+                    spec:
+                      skipDryRun: false
+              rollbackSteps:
+                - step:
+                    name: Swap primary with stage service
+                    identifier: rollbackBgSwapServices
+                    type: K8sBGSwapServices
+                    timeout: 10m
+                    spec:
+                      skipDryRun: false
+          tags: {}
+          failureStrategies:
+            - onFailure:
+                errors:
+                  - AllErrors
+                action:
+                  type: StageRollback
+      - stage:
+          name: deploy-guestbook-dev
+          identifier: deployguestbook
+          description: ""
+          type: Deployment
+          spec:
+            deploymentType: Kubernetes
+            service:
+              serviceRef: harnessguestbook
+            environment:
+              environmentRef: harnessdevenv
+              deployToAll: false
+              infrastructureDefinitions:
+                - identifier: k301
+                  inputs:
+                    identifier: k301
+                    type: KubernetesDirect
+                    spec:
+                      namespace: <+input>
+            execution:
+              steps:
+                - step:
+                    type: ShellScript
+                    name: CreateNS
+                    identifier: CreateNS
+                    spec:
+                      shell: Bash
+                      onDelegate: true
+                      source:
+                        type: Inline
+                        spec:
+                          script: kubectl create namespace <+infra.namespace> --dry-run=client -o yaml | kubectl apply -f -
+                      environmentVariables: []
+                      outputVariables: []
+                    timeout: 10m
+                - step:
+                    name: Stage Deployment
+                    identifier: stageDeployment
+                    type: K8sBlueGreenDeploy
+                    timeout: 10m
+                    spec:
+                      skipDryRun: false
+                      pruningEnabled: false
+                - step:
+                    name: Swap primary with stage service
+                    identifier: bgSwapServices
+                    type: K8sBGSwapServices
+                    timeout: 10m
+                    spec:
+                      skipDryRun: false
+              rollbackSteps:
+                - step:
+                    name: Swap primary with stage service
+                    identifier: rollbackBgSwapServices
+                    type: K8sBGSwapServices
+                    timeout: 10m
+                    spec:
+                      skipDryRun: false
+          tags: {}
+          failureStrategies:
+            - onFailure:
+                errors:
+                  - AllErrors
+                action:
+                  type: StageRollback
